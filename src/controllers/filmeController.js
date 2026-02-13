@@ -147,12 +147,12 @@ export const update = async (req, res) => {
 
     const data = await model.update(idNum, req.body);
     res.json({
-      message: `O registro "${data.titulo}" foi atualizado com sucesso!`,
+      message: `O filme "${data.titulo}" foi atualizado com sucesso!`,
       data,
     });
   } catch (error) {
     console.error("Erro ao atualizar:", error);
-    res.status(500).json({ error: "Erro ao atualizar registro" });
+    res.status(500).json({ error: "Erro ao atualizar filme" });
   }
 };
 
@@ -174,11 +174,11 @@ export const remove = async (req, res) => {
 
     await model.remove(idNum);
     res.json({
-      message: `O registro "${exists.titulo}" foi deletado com sucesso!`,
+      message: `O filme "${exists.titulo}" foi deletado com sucesso!`,
       deletado: exists,
     });
   } catch (error) {
     console.error("Erro ao deletar:", error);
-    res.status(500).json({ error: "Erro ao deletar registro" });
+    res.status(500).json({ error: "Erro ao deletar filme" });
   }
 };
